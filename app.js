@@ -44,72 +44,146 @@
 
 
 
- document.getElementById('signupForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  document.getElementById('fullScreenImage').style.display = 'flex';
-  const username = document.getElementById('signupUsername').value;
-  const email = document.getElementById('signupEmail').value;
-  const password = document.getElementById('signupPassword').value;
-  let users = JSON.parse(localStorage.getItem('users')) || [];
+//  document.getElementById('signupForm').addEventListener('submit', function (e) {
+//   e.preventDefault();
+//   document.querySelector(".form-section").style.display = "none";
+    
+   
+//     document.querySelector(".overlay").style.display = "flex";
+//   window.location.href = "https://w3layouts.com/wp-content/uploads/2020/08/Music-Beat-Website-Template.jpg"; 
+//   document.getElementById('fullScreenImage').style.display = 'flex';
+//   const username = document.getElementById('signupUsername').value;
+//   const email = document.getElementById('signupEmail').value;
+//   const password = document.getElementById('signupPassword').value;
+//   let users = JSON.parse(localStorage.getItem('users')) || [];
 
-  if (users.some(user => user.username === username)) {
-      Swal.fire({
-          icon: 'error',
-          title: 'User already exists',
-          text: 'Please try logging in or use a different username.',
-      });
-      return;
-  }
+//   if (users.some(user => user.username === username)) {
+//       Swal.fire({
+//           icon: 'error',
+//           title: 'User already exists',
+//           text: 'Please try logging in or use a different username.',
+//       });
+//       return;
+//   }
 
-  users.push({ username, email, password });
-  localStorage.setItem('users', JSON.stringify(users));
+//   users.push({ username, email, password });
+//   localStorage.setItem('users', JSON.stringify(users));
 
-  Swal.fire({
-      icon: 'success',
-      title: 'Sign Up Successful!',
-      text: 'You can now log in.',
-      timer: 2000,
-      showConfirmButton: false
-  }).then(() => {
-      document.getElementById('signupForm').reset();
-  });
+//   Swal.fire({
+//       icon: 'success',
+//       title: 'Sign Up Successful!',
+//       text: 'You can now log in.',
+//       timer: 2000,
+//       showConfirmButton: false
+//   }).then(() => {
+//       document.getElementById('signupForm').reset();
+//   });
+// });
+
+// document.getElementById('showLogin').addEventListener('click', function (e) {
+//   e.preventDefault();
+//   document.querySelector('.container').style.display = 'none';
+//   document.getElementById('loginContainer').style.display = 'block';
+// });
+// document.getElementById('loginForm').addEventListener('submit', function (e) {
+//   e.preventDefault();
+  
+//   const loginUsername = document.getElementById('loginUsername').value;
+//   const loginPassword = document.getElementById('loginPassword').value;
+
+
+//   const users = JSON.parse(localStorage.getItem('users')) || [];
+
+//   const user = users.find(user => user.username === loginUsername && user.password === loginPassword);
+
+//   if (user) {
+//       console.log('Login successful for:', loginUsername);
+
+//       Swal.fire({
+//           icon: 'success',
+//           title: 'Login Successful!',
+//           text: 'Redirecting...',
+//           timer: 2000,
+//           showConfirmButton: false
+//       }).then(() => {
+//           window.location.href = 'https://w3layouts.com/wp-content/uploads/2020/08/Music-Beat-Website-Template.jpg'; 
+//       });
+//   } else {
+//       console.log('Login failed. User not found or password incorrect.');
+
+//       Swal.fire({
+//           icon: 'error',
+//           title: 'Login Failed',
+//           text: 'Incorrect username or password.'
+//       });
+//   }
+// });
+document.getElementById('signupForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.querySelector(".form-section").style.display = "none"; 
+    document.getElementById('fullScreenImage').style.display = 'flex'; 
+    const username = document.getElementById('signupUsername').value;
+    const email = document.getElementById('signupEmail').value;
+    const password = document.getElementById('signupPassword').value;
+    
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    if (users.some(user => user.username === username)) {
+        Swal.fire({
+            icon: 'error',
+            title: 'User already exists',
+            text: 'Please try logging in or use a different username.',
+        });
+        return;
+    }
+    
+    users.push({ username, email, password });
+    localStorage.setItem('users', JSON.stringify(users));
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Sign Up Successful!',
+        text: 'You can now log in.',
+        timer: 2000,
+        showConfirmButton: false
+    }).then(() => {
+        document.querySelector(".form-section").style.display = "none"; // Hide form
+        document.getElementById('fullScreenImage').style.display = 'flex'; // Show full screen image
+    });
 });
 
 document.getElementById('showLogin').addEventListener('click', function (e) {
-  e.preventDefault();
-  document.querySelector('.container').style.display = 'none';
-  document.getElementById('loginContainer').style.display = 'block';
+    e.preventDefault();
+    document.querySelector('.container').style.display = 'none';
+    document.getElementById('loginContainer').style.display = 'block';
 });
+
 document.getElementById('loginForm').addEventListener('submit', function (e) {
-  e.preventDefault();
-  
-  const loginUsername = document.getElementById('loginUsername').value;
-  const loginPassword = document.getElementById('loginPassword').value;
+    e.preventDefault();
+    document.querySelector(".form-section").style.display = "none"; 
+    document.getElementById('fullScreenImage').style.display = 'flex'; 
+    const loginUsername = document.getElementById('loginUsername').value;
+    const loginPassword = document.getElementById('loginPassword').value;
 
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(user => user.username === loginUsername && user.password === loginPassword);
 
-  const users = JSON.parse(localStorage.getItem('users')) || [];
-
-  const user = users.find(user => user.username === loginUsername && user.password === loginPassword);
-
-  if (user) {
-      console.log('Login successful for:', loginUsername);
-
-      Swal.fire({
-          icon: 'success',
-          title: 'Login Successful!',
-          text: 'Redirecting...',
-          timer: 2000,
-          showConfirmButton: false
-      }).then(() => {
-          window.location.href = 'https://w3layouts.com/wp-content/uploads/2020/08/Music-Beat-Website-Template.jpg'; 
-      });
-  } else {
-      console.log('Login failed. User not found or password incorrect.');
-
-      Swal.fire({
-          icon: 'error',
-          title: 'Login Failed',
-          text: 'Incorrect username or password.'
-      });
-  }
+    if (user) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Login Successful!',
+            text: 'Redirecting...',
+            timer: 2000,
+            showConfirmButton: false
+        }).then(() => {
+            document.querySelector(".form-section").style.display = "none"; // Hide form
+            document.getElementById('fullScreenImage').style.display = 'flex'; // Show full screen image
+        });
+    } else {
+        Swal.fire({
+            icon: 'error',
+            title: 'Login Failed',
+            text: 'Incorrect username or password.'
+        });
+    }
 });

@@ -1,36 +1,3 @@
-/* body {
-    font-family: Arial, sans-serif;
-    background-image: url('https://t4.ftcdn.net/jpg/04/61/47/03/360_F_461470323_6TMQSkCCs9XQoTtyer8VCsFypxwRiDGU.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-}
-.container {
-    max-width: 400px;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-input[type="text"], input[type="email"], input[type="password"], input[type="tel"], input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-input[type="submit"]:hover {
-    background-color: #45a049;
-} */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -43,165 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-   background: linear-gradient(to bottom, rgb(118, 10, 118), rgb(249, 144, 188));
-}
-.container {
-    display: flex;
-    width: 100%;
-    max-width: 800px;
-    min-height: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-    flex-direction: row;
-}
-.image-section {
-    flex: 1;
-    background-image: url('imgs/girl-img.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 100%; /* Ensures the image section retains height */
-    height: 500px; /* Ensures a minimum height */
-}
-.form-section {
-    flex: 1;
-    padding: 40px;
-    background-color: rgba(238, 164, 221, 0.85); 
-    border-radius: 3px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-h2 {
-    margin-bottom: 20px;
-    color: #333;
-}input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-}
-.btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #096ad2;
-    color: white;
-    border: none;
-    border-radius: 90px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-.btn:hover {
-    background-color: #0056b3;
-}
-
-/* .container {
-    display: flex;
-    width: 800px;
-    height: 500px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-} */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.overlay img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-}
-/* .image-section {
-    flex: 1;
-    background-image: url('imgs/girl-img.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.form-section {
-    flex: 1;
-    padding: 40px;
-    background-color: rgba(238, 164, 221, 0.35);
-} */
-
-
-
-
-.login-options {
-    margin-top: 15px;
-    text-align: center;
-    color: #555;
-}
-
-.login-options a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.login-options a:hover {
-    text-decoration: underline;
-}
-
-@media screen and (max-width: 781px) {
-    .container {
-        flex-direction: column;
-        min-height: 600px;
-    }
-
-    .image-section {
-        height: 300px; /* Ensures the image section stays visible */
-        background-size: cover;
-        background-position: center;
-        flex: none; /* Prevents the image from collapsing */
-    }
-
-    .form-section {
-        padding: 20px;
-    }
-}
-
-/* Media query for smaller screens (max-width: 480px) */
-@media screen and (max-width: 480px) {
-    .image-section {
-        height: 250px; /* Ensure the image remains visible on smaller screens */
-        background-size: cover;
-        flex: none;
-    }
-
-    .form-section {
-        padding: 15px;
-    }
-}
-
-
- 
-  /* * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     background: linear-gradient(to bottom, rgb(118, 10, 118), rgb(249, 144, 188));
 }
 
@@ -222,14 +30,15 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 100%; /* Ensures the image section retains height */
-    /* height: 500px; /* Ensures a minimum height 
+    min-height: 100%;
+    height: 500px;
 }
 
 .form-section {
     flex: 1;
     padding: 40px;
-    background-color: rgba(238, 164, 221, 0.85); 
+    background-color: rgba(238, 164, 221, 0.85);
+    border-radius: 3px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -243,11 +52,11 @@ h2 {
 input[type="text"],
 input[type="password"] {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 19px;
+    padding: 10px;
+    margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .btn {
@@ -263,37 +72,77 @@ input[type="password"] {
 }
 
 .btn:hover {
-    background-color: #01448c;
+    background-color: #0056b3;
 }
 
-/* Media query for screen sizes less than or equal to 781px 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.overlay img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.login-options {
+    margin-top: 15px;
+    text-align: center;
+    color: #555;
+}
+
+.login-options a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+/* Media Query */
 @media screen and (max-width: 781px) {
     .container {
-        flex-direction: column;
+        flex-direction: column; /* Stack the sections */
         min-height: 600px;
     }
 
     .image-section {
-        height: 300px; /* Ensures the image section stays visible 
-        background-size: cover;
-        background-position: center;
-        flex: none; /* Prevents the image from collapsing 
+        height: 500px; /* Control image section height */
     }
 
     .form-section {
-        padding: 20px;
+        /* You can hide the form section on smaller screens */
+        display: none; /* Initially hide the form */
     }
+    
 }
 
-/* Media query for smaller screens (max-width: 480px) 
-@media screen and (max-width: 480px) {
-    .image-section {
-        height: 250px; /* Ensure the image remains visible on smaller screens 
-        background-size: cover;
-        flex: none;
-    }
+Fullscreen overlay
+.overlay {
+    position: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
 
-    .form-section {
-        padding: 15px;
-    }
-} */
+.overlay img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
